@@ -4,11 +4,14 @@ An Docker image of Scylla apt repository mirror, to make Scylla installable on
 isolated network.
 
 ## build mirror server
+> This document is written for Ubuntu 16.04LTS, but the docker image should works on other distributions.
+> Please follow your distribution way to install packages.
 
 Install docker on the server. Please note that docker package name isn't "docker".
 ```
 sudo apt update
 sudo apt install docker.io
+sudo systemctl start docker
 ```
 
 Fetch this repository.
@@ -47,7 +50,7 @@ sudo apt update
 sudo apt install scylla
 ```
 
-### run mirror server without building
+## run mirror server without building
 
 After docker image built, we can export the image to .tar archive.
 ```
